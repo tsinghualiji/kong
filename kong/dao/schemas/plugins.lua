@@ -19,7 +19,8 @@ return {
     id = {
       type = "id",
       dao_insert_value = true,
-      required = true
+      required = true,
+      unique = true,
     },
     created_at = {
       type = "timestamp",
@@ -96,6 +97,7 @@ return {
         api_id = plugin_t.api_id,
         consumer_id = plugin_t.consumer_id
       }
+
       if err then
         return false, err
       elseif #rows > 0 then

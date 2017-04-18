@@ -401,4 +401,13 @@ return {
     end,
     down = function(_, _, dao) end
   },
+  {
+    name = "2017-04-18-153000_unique_plugins_id",
+    up = [[
+      ALTER TABLE plugins ADD CONSTRAINT plugins_id_key UNIQUE(id);
+    ]],
+    down = [[
+      ALTER TABLE plugins DROP CONSTRAINT plugins_id_key;
+    ]],
+  },
 }
